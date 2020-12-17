@@ -10,13 +10,14 @@ rm -f xmlbench
 go build xmlbench.go 
 
 echo "starting prod"
-# ./master -label master -profile
+# to profile run with profile param
+# ./xmlbench -profile
 ./xmlbench
 echo "killing top process"
 pkill -f "top -stats"
 
 echo "starting development version"
-# ./imirkin -label imirkin -profile
+# ./xmlbench -devel -profile
 ./xmlbench -devel
 echo "killing top process"
 pkill -f "top -stats"
